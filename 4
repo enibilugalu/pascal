@@ -1,0 +1,16 @@
+var a: array [1..20] of real;
+n, n_min: integer;
+begin
+writeln('Количество спортсменов');
+readln(n);
+writeln('Время');
+for var i := 1 to n do
+read(a[i]);
+//поиск минимального элемента
+n_min := 1;
+for var i := 2 to n do
+if a[i] < a[n_min] then
+n_min := i;
+writeln('Победитель — лыжник');
+writeln('Его время - ', a[n_min]);
+end.
