@@ -1,0 +1,14 @@
+const c: array [1..10] of integer = (9000, 3000, 15000,
+8000, 6400, 14000, 4500, 11500, 17000, 7400);
+var k, n_max: integer;
+begin
+ n_max := 1;
+ for var i := 2 to 10 do
+  if c[i] > c[n_max] then
+   n_max := i;
+ writeln('Стоимость самого дорого авто - ', c[n_max]);
+ writeln('Под номерами:');
+ for var i := 1 to 10 do
+  if c[i] = c[n_max] then
+   write(i, ' ');
+end.
