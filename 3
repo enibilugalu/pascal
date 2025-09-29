@@ -1,0 +1,22 @@
+var r: array [1..20] of real;
+fam: array [1..20] of string;
+n, k: integer;
+begin
+writeln('Количесто учащихся');
+readln(n);
+writeln('Фамилия и результат:');
+for var i := 1 to n do
+begin
+readln(fam[i]);
+readln(r[i]);
+end;
+writeln('Фамилии не сдавших');
+k := 0;
+for var i := 1 to n do
+if r[i] > 16 then
+begin
+k := k + 1;
+writeln(fam[i]);
+end;
+writeln('Не сдали норматив:', k);
+end.
