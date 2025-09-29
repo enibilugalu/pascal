@@ -1,0 +1,17 @@
+var a: array[1..20] of integer;
+n,min,n_min: integer;
+begin
+ write('Количество n');
+ readln(n);
+ writeln('Элементы массива');
+ for var i:=1 to n do
+   read(a[1]);
+ min :=a[1]; n_min :=1;
+ for var i :=2 to n do
+   if a[i] < min then
+   begin
+     min :=a[i]; n_min :=i;
+   end;
+   writeln('Минимум=',min);
+   writeln('Его место',n_min);
+end.
