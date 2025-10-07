@@ -1,14 +1,28 @@
 var a: array[1..20] of integer;
-n,min: integer;
+n, k, x: integer;
 begin
- write('Количество n');
+ write('Количество n =');
  readln(n);
  writeln('Элементы массива');
- for var i:=1 to n do
-   read(a[1]);
- min:=a[1];
- for var i :=2 to n do
-   if a[i] < min then
-     min := a[i];
-   writeln('Минимум=',min)
+ for var i := 1 to n do
+ read(a[i]);
+ write('Номер элемента массива k =');
+ readln(k);
+ if k > n then
+  writeln('k не может быть меньше n')
+ else
+ begin
+   write('Число x =');
+   readln(x);
+   for var i := 1 to n do
+   begin
+   if a[i] > 0 then
+    a[i] := a[i] - a[k]
+   else if a[i] < 0 then
+    a[i] := a[i] + x;
+   end;
+   writeln('Преобразованный массив');
+   for var i := 1 to n do
+   write(a[i], ' ');
+ end;
 end.
