@@ -1,28 +1,24 @@
 var a: array[1..20] of integer;
-n, k, x: integer;
+n, buf, pol: integer;
 begin
  write('Количество n =');
  readln(n);
- writeln('Элементы массива');
- for var i := 1 to n do
- read(a[i]);
- write('Номер элемента массива k =');
- readln(k);
- if k > n then
-  writeln('k не может быть меньше n')
+ if n mod 2 <> 0 then
+  writeln('n должно быть чётным числом')
  else
  begin
-   write('Число x =');
-   readln(x);
+   writeln('Элементы массива');
    for var i := 1 to n do
+    read(a[i]);
+   pol := n div 2;
+   for var i := 1 to pol do
    begin
-   if a[i] > 0 then
-    a[i] := a[i] - a[k]
-   else if a[i] < 0 then
-    a[i] := a[i] + x;
+    buf := a[i];
+    a[i] := a[pol + i];
+    a[pol + i] := buf;
    end;
    writeln('Преобразованный массив');
    for var i := 1 to n do
-   write(a[i], ' ');
+    write(a[i], ' ');
  end;
 end.
